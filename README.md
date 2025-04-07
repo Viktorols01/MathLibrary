@@ -10,4 +10,8 @@ Feel free to import the module as a submodule!
 # Optimizations
 None so far!
 
-
+# Build
+To build the project using CMake with generator Unix Makefiles: 
+```bash
+cmake -S src -I include -B build; make -C build Test
+```
