@@ -1,0 +1,1 @@
+- Allow vectors to be composed of any mathematical field (not just arithmetic types)
