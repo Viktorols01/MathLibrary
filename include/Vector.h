@@ -23,6 +23,7 @@ namespace MathLibrary {
         
         std::size_t getDimension() const;
         float get(int index) const;
+        void set(int index, float value);
 
         // Operator overloads
         Vector operator+(const Vector &other) const;

@@ -18,6 +18,7 @@ namespace MathLibrary {
         std::size_t getRowCount() const;
         std::size_t getColCount() const;
         float get(int row, int col) const;
+        void set(int row, int col, float value);
 
         Matrix operator+(const Matrix &other) const;
         Matrix operator-(const Matrix &other) const;

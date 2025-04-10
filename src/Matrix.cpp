@@ -43,4 +43,30 @@ namespace MathLibrary
     std::size_t Matrix::getColCount() const {
         return colCount;
     }
+
+    float Matrix::get(int row, int col) const {
+        return components[row][col];
+    }
+
+    void Matrix::set(int row, int col, float value) {
+        components[row][col] = value;
+    }
+
+    Matrix Matrix::operator+(const Matrix &other) const
+     {
+        if (rowCount != other.rowCount || colCount != other.colCount) {
+            throw std::invalid_argument("Matrix dimensions not valid for addition.");
+        }
+
+        Matrix result (rowCount, colCount);
+
+        for (std::size_t i = 0; i < rowCount; i++)
+        {
+            for (std::size_t j = 0; j < colCount; j++)
+            {
+                result.components[i][j] = components[i][j] + other.components[i][j];
+            }
+        }
+        return result;
+    }
 }

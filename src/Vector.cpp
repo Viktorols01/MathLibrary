@@ -86,6 +86,10 @@ namespace MathLibrary
     float Vector::get(int index) const {
         return components[index];
     }
+
+    void Vector::set(int index, float value) {
+        components[index] = value; 
+    }
     
     Vector Vector::operator+(const Vector &other) const {
         if (dimension != other.dimension)
