@@ -5,27 +5,29 @@
 #include <type_traits>
 
 namespace MathLibrary {
-    template<typename T, typename = std::enable_if<std::is_arithmetic_v<T>>>
     class Vector {
         private:
-        T* components; 
-        std::size_t dimensions;
+        float* components; 
+        std::size_t dimension;
         public:  
         // Constructor
-        Vector(T* components, std::size_t dimensions) : components(components), dimensions(dimensions) {};
+        Vector(float* components, std::size_t dimension);
+        Vector(std::size_t dimension);
+        ~Vector();
 
         // Member functions
-        double magnitude() const;
+        float magnitude() const;
         Vector normalize() const;
-        double dot(const Vector &other) const;
+        float dot(const Vector &other) const;
         Vector cross(const Vector &other) const;
+        std::size_t getDimension() const;
 
         // Operator overloads
         Vector operator+(const Vector &other) const;
         Vector operator-(const Vector &other) const;
-        Vector operator*(double scalar) const;
-        Vector operator*(Vector vector) const;
-        bool operator==(const Vector &other) const;
+        Vector operator*(float scalar) const;
+        float operator[](int index) const;
+
     };
 }
 

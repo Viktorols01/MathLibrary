@@ -1,1 +1,3 @@
-- Allow vectors to be composed of any mathematical field (not just arithmetic types)
+- Restrict vectors to be composed of any mathematical field (not just arithmetic types)
+- Add lint
+- Add unit tests

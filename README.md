@@ -11,7 +11,7 @@ Feel free to import the module as a submodule!
 None so far!
 
 # Build
-To build the project using CMake with Ninja: 
+To build the project using CMake with Ninja and run: 
 ```bash
-cmake -S src -B build; ninja -C build Test
+cmake -S src -B build; ninja -C build Test; ./build/Test.exe
 ```
