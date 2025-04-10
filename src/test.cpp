@@ -9,7 +9,7 @@ void printVector(const Vector& vector) {
         if (i != 0) {
             std::cout << ",";
         }
-        std::cout << vector[i];
+        std::cout << vector.get(i);
     }
     std::cout << ")";
 }
@@ -25,5 +25,6 @@ int main() {
     printVector(u);
     printVector(v);
     printVector(w);
+    printf("Magnitude of v: %f", v.magnitude());
     return 0;
 }

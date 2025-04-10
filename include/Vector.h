@@ -20,15 +20,15 @@ namespace MathLibrary {
         Vector normalize() const;
         float dot(const Vector &other) const;
         Vector cross(const Vector &other) const;
+        
         std::size_t getDimension() const;
+        float get(int index) const;
 
         // Operator overloads
         Vector operator+(const Vector &other) const;
         Vector operator-(const Vector &other) const;
         Vector operator*(float scalar) const;
         friend Vector operator*(float scalar, const Vector &vector);
-        float operator[](int index) const;
-
     };
 }
 

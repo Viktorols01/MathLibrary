@@ -5,11 +5,11 @@
 namespace MathLibrary
 {
 
-    Vector::Vector(float *components, std::size_t dimensions)
-        : dimension(dimensions)
+    Vector::Vector(float *components, std::size_t dimension)
+        : dimension(dimension)
     {
-        this->components = new float[dimensions];
-        for (std::size_t i = 0; i < dimensions; ++i)
+        this->components = new float[dimension];
+        for (std::size_t i = 0; i < dimension; ++i)
         {
             this->components[i] = components[i];
         }
@@ -29,7 +29,7 @@ namespace MathLibrary
     float Vector::magnitude() const
     {
         float sum = 0.0;
-        for (std::size_t i = 0; i < dimension; ++i)
+        for (std::size_t i = 0; i < dimension; i++)
         {
             sum += components[i] * components[i];
         }
@@ -82,6 +82,10 @@ namespace MathLibrary
     std::size_t Vector::getDimension() const {
         return dimension;
     }
+
+    float Vector::get(int index) const {
+        return components[index];
+    }
     
     Vector Vector::operator+(const Vector &other) const {
         if (dimension != other.dimension)
@@ -122,11 +126,4 @@ namespace MathLibrary
         }
         return result;
     }
-
-    float Vector::operator[](int index) const {
-        if (index > dimension) {
-            throw std::invalid_argument("Index out of bounds!");
-        }
-        return components[index];
-    }
-}
+} 
