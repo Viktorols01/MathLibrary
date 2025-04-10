@@ -24,6 +24,10 @@ namespace MathLibrary
         for (std::size_t i = 0; i < row; i++)
         {
             this->components[i] = new float[col]; 
+            for (std::size_t j = 0; j < col; j++)
+            {
+                this->components[i][j] = 0;
+            }
         }
     }
 
