@@ -11,7 +11,7 @@ Feel free to import the module as a submodule!
 None so far!
 
 # Build
-To build the project using CMake with generator Unix Makefiles: 
+To build the project using CMake with Ninja: 
 ```bash
-cmake -S src -I include -B build; make -C build Test
+cmake -S src -B build; ninja -C build Test
 ```
