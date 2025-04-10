@@ -18,7 +18,12 @@ int main() {
     printf("Hello world! \n");
     printf("Size of float: %d \n", sizeof(float));
 
-    Vector v(3);
+    Vector u(3);
+    float components[]{1, 2, 3};
+    Vector v = Vector(components, 3);
+    Vector w = u + 2*v;
+    printVector(u);
     printVector(v);
+    printVector(w);
     return 0;
 }

@@ -89,8 +89,8 @@ namespace MathLibrary
             throw std::invalid_argument("Vectors must have the same dimensions for dot product");
         }
         Vector result(dimension); 
-        for (std::size_t i; i < dimension; i++) {
-            result = components[i] + other.components[i];
+        for (std::size_t i = 0; i < dimension; i++) {
+            result.components[i] = components[i] + other.components[i];
         }
         return result;
     }
@@ -101,16 +101,24 @@ namespace MathLibrary
             throw std::invalid_argument("Vectors must have the same dimensions for dot product");
         }
         Vector result(dimension); 
-        for (std::size_t i; i < dimension; i++) {
-            result = components[i] - other.components[i];
+        for (std::size_t i = 0; i < dimension; i++) {
+            result.components[i] = components[i] - other.components[i];
         }
         return result;
     }
 
     Vector Vector::operator*(float scalar) const {
         Vector result(dimension); 
-        for (std::size_t i; i < dimension; i++) {
-            result = components[i] * scalar; 
+        for (std::size_t i = 0; i < dimension; i++) {
+            result.components[i] = components[i] * scalar; 
+        }
+        return result;
+    }
+
+    Vector operator*(float scalar, const Vector& vector) {
+        Vector result(vector.dimension); 
+        for (std::size_t i = 0; i < vector.dimension; i++) {
+            result.components[i] = vector.components[i] * scalar; 
         }
         return result;
     }

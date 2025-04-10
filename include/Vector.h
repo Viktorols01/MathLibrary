@@ -26,6 +26,7 @@ namespace MathLibrary {
         Vector operator+(const Vector &other) const;
         Vector operator-(const Vector &other) const;
         Vector operator*(float scalar) const;
+        friend Vector operator*(float scalar, const Vector &vector);
         float operator[](int index) const;
 
     };
