@@ -2,7 +2,6 @@
 #define MATRIX_H
 
 #include <cstddef>
-#include <type_traits>
 
 namespace MathLibrary {
     class Matrix {

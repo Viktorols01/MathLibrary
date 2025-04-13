@@ -2,7 +2,6 @@
 #define VECTOR_H
 
 #include <cstddef>
-#include <type_traits>
 
 namespace MathLibrary {
     class Vector {

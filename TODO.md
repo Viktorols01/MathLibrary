@@ -4,4 +4,4 @@
 - JFNK
 - Automatic differentiation?
 - Add lint
-- Add unit tests
+- Add unit tests (I will be using GoogleTest)
