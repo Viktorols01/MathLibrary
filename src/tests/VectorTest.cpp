@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>        
 
 TEST(VectorTest, CreateEmptyVector) {
-    Vector v = new Vector(2);
+    MathLibrary::Vector v = MathLibrary::Vector(2);
     for (int i = 0; i < 2; i++) {
         EXPECT_EQ(v.get(i), 0);
     }

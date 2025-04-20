@@ -13,5 +13,11 @@ None so far!
 # Build
 To build the project using CMake with Ninja and run: 
 ```bash
-cmake -S src -B build; ninja -C build Test; ./build/Test.exe
+cmake -S src -B build -G "Ninja"; ninja -C build ManualTest AutoTest; ./build/ManualTest.exe
+```
+
+# Testing
+To test, run:
+```bash
+ctest --test-dir build
 ```
