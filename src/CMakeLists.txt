@@ -4,12 +4,9 @@ project(MathLibrary)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_library(MathLib STATIC 
-    ${CMAKE_CURRENT_SOURCE_DIR}/Vector.cpp)
+add_library(MathLib INTERFACE) 
 
 add_executable(ManualTest EXCLUDE_FROM_ALL 
-    ${CMAKE_CURRENT_SOURCE_DIR}/Vector.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/Matrix.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
@@ -27,7 +24,7 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(AutoTest
-  ${CMAKE_CURRENT_SOURCE_DIR}/tests/VectorTest.cpp
+  ${CMAKE_CURRENT_SOURCE_DIR}/tests/MatrixTest.cpp
 )
 target_link_libraries(
   AutoTest

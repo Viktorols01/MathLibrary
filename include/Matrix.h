@@ -2,29 +2,94 @@
 #define MATRIX_H
 
 #include <cstddef>
+#include <stdexcept>
 
-namespace MathLibrary {
-    class Matrix {
-        private:
-        float** components; 
-        std::size_t rowCount;
-        std::size_t colCount;
-        public:  
-        Matrix(float** components, std::size_t row, std::size_t col);
-        Matrix(std::size_t row, std::size_t col);
-        ~Matrix();
+namespace MathLibrary
+{
 
-        std::size_t getRowCount() const;
-        std::size_t getColCount() const;
-        float get(int row, int col) const;
-        void set(int row, int col, float value);
+    // It appears I must implement the functions
+    // here for the template to work?
+    // Will have to study this in more detail later
+    template <std::size_t rowCount, std::size_t colCount>
+    class Matrix
+    {
+    private:
+        float *components;
 
-        Matrix operator+(const Matrix &other) const;
-        Matrix operator-(const Matrix &other) const;
-        Matrix operator*(float scalar) const;
-        friend Matrix operator*(float scalar, const Matrix matrix);
-        float* operator[](int index) const;
+    public:
+        Matrix()
+        {
+            components = new float[rowCount * colCount]();
+        }
+        ~Matrix()
+        {
+            delete[] components;
+        }
 
+        // No checking if operation valid --> better performance?
+        float get(int row, int col) const
+        {
+            return components[row + rowCount * col];
+        }
+        void set(int row, int col, float value)
+        {
+            components[row + rowCount * col] = value;
+        }
+
+        Matrix operator+(const Matrix &other) const
+        {
+            Matrix result;
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < colCount; j++)
+                {
+                    result.set(i, j, get(i, j) + other.get(i, j));
+                }
+            }
+            return result;
+        }
+        Matrix operator-(const Matrix &other) const
+        {
+            Matrix result;
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < colCount; j++)
+                {
+                    result.set(i, j, get(i, j) - other.get(i, j));
+                }
+            }
+            return result;
+        }
+        float *operator[](int index) const
+        {
+            Matrix result;
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < colCount; j++)
+                {
+                    result.set(i, j, get(i, j) * index);
+                }
+            }
+            return result;
+        }
+        template <std::size_t colCountOther>
+        Matrix<rowCount, colCountOther> operator*(const Matrix<colCount, colCountOther> &other)
+        {
+            Matrix<rowCount, colCountOther> result;
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < colCountOther; j++)
+                {
+                    float sum = 0;
+                    for (int k = 0; k < colCount; k++)
+                    {
+                        sum += get(i, k) * other.get(k, j);
+                    }
+                    result.set(i, j) = sum;
+                }
+            }
+            return result;
+        }
     };
 }
 
