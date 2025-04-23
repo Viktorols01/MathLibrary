@@ -21,10 +21,15 @@ void printMatrix(const Matrix<rowCount, colCount>& matrix) {
 
 int main() {
     printf("Hello world! \n");
-    printf("Size of float: %d \n", sizeof(float));
+    printf("Size of float: %lu \n", sizeof(float));
 
-    Matrix<2, 3> m1;
-    m1.set(0, 0, 7.0);
-    printMatrix(m1);
+    Matrix<2, 3> m;
+    m.set(0, 0, 7.0);
+    Matrix<3, 1> v;
+    v.set(0, 0, 1.0);
+    v.set(0, 0, 1.0);
+    printMatrix(m);
+    printMatrix(v);
+    printMatrix(m*v);
     return 0;
 }

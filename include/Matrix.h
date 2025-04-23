@@ -2,7 +2,6 @@
 #define MATRIX_H
 
 #include <cstddef>
-#include <stdexcept>
 
 namespace MathLibrary
 {
@@ -60,7 +59,7 @@ namespace MathLibrary
             }
             return result;
         }
-        float *operator[](int index) const
+        Matrix operator*(int index) const
         {
             Matrix result;
             for (int i = 0; i < rowCount; i++)
@@ -85,7 +84,7 @@ namespace MathLibrary
                     {
                         sum += get(i, k) * other.get(k, j);
                     }
-                    result.set(i, j) = sum;
+                    result.set(i, j, sum);
                 }
             }
             return result;
