@@ -35,6 +35,18 @@ namespace MathLibrary
             components[row + rowCount * col] = value;
         }
 
+        Matrix<colCount, rowCount> transpose() const {
+            Matrix<colCount, rowCount> result;
+            for (int i = 0; i < rowCount; i++)
+            {
+                for (int j = 0; j < colCount; j++)
+                {
+                    result.set(j, i, get(i, j));
+                }
+            }
+            return result;
+        }
+
         Matrix operator+(const Matrix &other) const
         {
             Matrix result;

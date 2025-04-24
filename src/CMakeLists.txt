@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(MathLib INTERFACE) 
 
 add_executable(ManualTest EXCLUDE_FROM_ALL 
-    ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/manualtest.cpp)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
