@@ -15,15 +15,17 @@ TEST(CreateMatrixTest, CreateEmptyMatrix)
 
 class MatrixTest : public testing::Test {
     protected:
+    MathLibrary::Matrix<2, 3> m;
+    MathLibrary::Matrix<3, 1> v;
+    float eps;
 
     MatrixTest() {
+        eps = 0.0001;
         m.set(0, 0, 7.0);
         v.set(0, 0, 1.0);
         v.set(0, 0, 1.0);
     }
 
-    MathLibrary::Matrix<2, 3> m;
-    MathLibrary::Matrix<3, 1> v;
 };
 
 TEST_F(MatrixTest, ModifyMatrixTest) {
@@ -37,7 +39,7 @@ TEST_F(MatrixTest, ModifyMatrixTest) {
     EXPECT_EQ(m.get(1, 1), 3.0);    
 }
 
-TEST_F(MatrixTest, OperationsMatrixTest) {
+TEST_F(MatrixTest, TransposeAndMultiplyTest) {
     
     // Create transpose and multiply with original
     auto m_prime = m.transpose();
@@ -48,9 +50,9 @@ TEST_F(MatrixTest, OperationsMatrixTest) {
         for (int j = 0; j < 3; j++)
         {
             if (i == 0 && j == 0) {
-                EXPECT_EQ(m.get(i, j), 7.0);
+                EXPECT_NEAR(mm.get(i, j), 49.0, eps);
             } else {
-                EXPECT_EQ(m.get(i, j), 0.0); // Won't work due to precision of float
+                EXPECT_NEAR(mm.get(i, j), 0.0, eps); // Won't work due to precision of float
             }
         }
     }
