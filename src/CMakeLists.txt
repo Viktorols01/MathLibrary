@@ -3,6 +3,7 @@ project(MathLibrary)
 
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # enables creating compile_commands.json for clangd
 
 add_library(MathLib INTERFACE) 
 

@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/viktorols/Code/MathLibrary/build",
+  "command": "/usr/bin/c++ -I/home/viktorols/Code/MathLibrary/src/../include -std=gnu++14 -o CMakeFiles/ManualTest.dir/manualtest.cpp.o -c /home/viktorols/Code/MathLibrary/src/manualtest.cpp",
+  "file": "/home/viktorols/Code/MathLibrary/src/manualtest.cpp",
+  "output": "CMakeFiles/ManualTest.dir/manualtest.cpp.o"
+},
+{
+  "directory": "/home/viktorols/Code/MathLibrary/build",
+  "command": "/usr/bin/c++ -I/home/viktorols/Code/MathLibrary/src/../include -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/include -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest -std=gnu++14 -o CMakeFiles/AutoTest.dir/tests/MatrixTest.cpp.o -c /home/viktorols/Code/MathLibrary/src/tests/MatrixTest.cpp",
+  "file": "/home/viktorols/Code/MathLibrary/src/tests/MatrixTest.cpp",
+  "output": "CMakeFiles/AutoTest.dir/tests/MatrixTest.cpp.o"
+},
+{
+  "directory": "/home/viktorols/Code/MathLibrary/build",
+  "command": "/usr/bin/c++ -I/home/viktorols/Code/MathLibrary/src/../include -I/home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googlemock/include -I/home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googlemock -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/include -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest -std=c++14 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/home/viktorols/Code/MathLibrary/build",
+  "command": "/usr/bin/c++ -I/home/viktorols/Code/MathLibrary/src/../include -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googlemock/include -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googlemock -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/include -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest -std=c++14 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/home/viktorols/Code/MathLibrary/build",
+  "command": "/usr/bin/c++ -I/home/viktorols/Code/MathLibrary/src/../include -I/home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/include -I/home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest -std=c++14 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/home/viktorols/Code/MathLibrary/build",
+  "command": "/usr/bin/c++ -I/home/viktorols/Code/MathLibrary/src/../include -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/include -isystem /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest -std=c++14 -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -o _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/home/viktorols/Code/MathLibrary/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]
