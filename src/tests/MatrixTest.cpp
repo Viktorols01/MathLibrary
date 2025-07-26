@@ -1,8 +1,8 @@
-#include "Matrix.h" 
+#include "Matrix.h"
 #include <gtest/gtest.h>
 
 TEST(CreateMatrixTest, CreateEmptyMatrix) {
-  MathLibrary::Matrix<2, 2> m;
+  MathLibrary::Matrix m(2, 2);
   for (int i = 0; i < 2; i++) {
     for (int j = 0; j < 2; j++) {
       EXPECT_EQ(m.get(i, j), 0);
@@ -12,11 +12,11 @@ TEST(CreateMatrixTest, CreateEmptyMatrix) {
 
 class MatrixTest : public testing::Test {
 protected:
-  MathLibrary::Matrix<2, 3> m;
-  MathLibrary::Matrix<3, 1> v;
+  MathLibrary::Matrix m;
+  MathLibrary::Matrix v;
   float eps;
 
-  MatrixTest() {
+  MatrixTest() : m(2, 3), v(3, 1) {
     eps = 0.0001;
     m.set(0, 0, 7.0);
     v.set(0, 0, 1.0);

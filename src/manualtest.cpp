@@ -3,12 +3,11 @@
 
 using namespace MathLibrary;
 
-template<std::size_t rowCount, std::size_t colCount>
-void printMatrix(const Matrix<rowCount, colCount>& matrix) {
+void printMatrix(const Matrix& matrix) {
     std::cout << "\n";
-    for (std::size_t i = 0; i < rowCount; i++) {
+    for (std::size_t i = 0; i < matrix.getRowCount(); i++) {
         std::cout << "|";
-        for (std::size_t j = 0; j < colCount; j++) {
+        for (std::size_t j = 0; j < matrix.getColCount(); j++) {
             if (j != 0) {
                 std::cout << " ";
             }
@@ -23,9 +22,9 @@ int main() {
     printf("Hello world! \n");
     printf("Size of float: %lu \n", sizeof(float));
 
-    Matrix<2, 3> m;
+    Matrix m(2, 3);
     m.set(0, 0, 7.0);
-    Matrix<3, 1> v;
+    Matrix v(3, 1);
     v.set(0, 0, 1.0);
     v.set(0, 0, 1.0);
     printMatrix(m);
