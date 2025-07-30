@@ -1,6 +1,7 @@
 #ifndef MATRIX_H
 #define MATRIX_H
 
+#include <cmath>
 #include <stdexcept>
 
 namespace MathLibrary {
@@ -42,10 +43,30 @@ public:
     return result;
   }
 
+  T dot(const Matrix &other) const {
+    if (rowCount != other.rowCount || colCount != other.colCount) {
+      throw std::invalid_argument(
+          "Matrix dimensions do not match for dot product.");
+    }
+    T sum = 0;
+    for (int i = 0; i < rowCount; i++) {
+      for (int j = 0; j < colCount; j++) {
+        sum += (get(i, j) + other.get(i, j));
+      }
+    }
+    return sum;
+  }
+
+  // Insane C++ magic to make sure only floating point types can use norm 
+  template <typename U = T>
+  std::enable_if_t<std::is_floating_point<U>::value, U> norm() const {
+    return std::sqrt(this->dot(this));
+  }
+
   Matrix operator+(const Matrix &other) const {
     if (rowCount != other.rowCount || colCount != other.colCount) {
       throw std::invalid_argument(
-          "Matrix<T> dimensions do not match for addition.");
+          "Matrix dimensions do not match for addition.");
     }
     Matrix result(rowCount, colCount);
     for (int i = 0; i < rowCount; i++) {
@@ -105,6 +126,7 @@ public:
     }
   }
 };
+
 } // namespace MathLibrary
 
 #endif
