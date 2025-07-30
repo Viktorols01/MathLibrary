@@ -16,9 +16,9 @@ private:
   T *components;
 
 public:
-  Matrix(int rowCount, int colCount) : rowCount(rowCount), colCount(colCount) {
-    components = new T[rowCount * colCount]();
-  }
+  Matrix(int rowCount, int colCount)
+      : rowCount(rowCount), colCount(colCount),
+        components(new T[rowCount * colCount]()) {}
   ~Matrix() { delete[] components; }
   Matrix(const Matrix &matrix) = default;
 

@@ -32,5 +32,6 @@ int main() {
     printMatrix(v);
     printMatrix(m*v);
     printMatrix(m.transpose());
+    printMatrix(m * m.transpose());
     return 0;
 }
