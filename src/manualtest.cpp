@@ -3,7 +3,8 @@
 
 using namespace MathLibrary;
 
-void printMatrix(const Matrix& matrix) {
+template<typename T>
+void printMatrix(const Matrix<T>& matrix) {
     std::cout << "\n";
     for (std::size_t i = 0; i < matrix.getRowCount(); i++) {
         std::cout << "|";
@@ -22,9 +23,9 @@ int main() {
     printf("Hello world! \n");
     printf("Size of float: %lu \n", sizeof(float));
 
-    Matrix m(2, 3);
+    Matrix<float> m(2, 3);
     m.set(0, 0, 7.0);
-    Matrix v(3, 1);
+    Matrix<float> v(3, 1);
     v.set(0, 0, 1.0);
     v.set(0, 0, 1.0);
     printMatrix(m);

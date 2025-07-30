@@ -5,22 +5,26 @@
 
 namespace MathLibrary {
 
-class Matrix {
+/*
+Assumes T is numeric
+*/
+
+template <typename T> class Matrix {
 private:
   int rowCount;
   int colCount;
-  float *components;
+  T *components;
 
 public:
   Matrix(int rowCount, int colCount) : rowCount(rowCount), colCount(colCount) {
-    components = new float[rowCount * colCount]();
+    components = new T[rowCount * colCount]();
   }
   ~Matrix() { delete[] components; }
+  Matrix(const Matrix &matrix) = default;
 
-  // No checking if operation valid --> better performance?
-  float get(int row, int col) const { return components[row + rowCount * col]; }
+  T get(int row, int col) const { return components[row + rowCount * col]; }
 
-  void set(int row, int col, float value) {
+  void set(int row, int col, T value) {
     components[row + rowCount * col] = value;
   }
 
@@ -41,7 +45,7 @@ public:
   Matrix operator+(const Matrix &other) const {
     if (rowCount != other.rowCount || colCount != other.colCount) {
       throw std::invalid_argument(
-          "Matrix dimensions do not match for addition.");
+          "Matrix<T> dimensions do not match for addition.");
     }
     Matrix result(rowCount, colCount);
     for (int i = 0; i < rowCount; i++) {
@@ -55,7 +59,7 @@ public:
   Matrix operator-(const Matrix &other) const {
     if (rowCount != other.rowCount || colCount != other.colCount) {
       throw std::invalid_argument(
-          "Matrix dimensions do not match for subtraction.");
+          "Matrix<T> dimensions do not match for subtraction.");
     }
     Matrix result(rowCount, colCount);
     for (int i = 0; i < rowCount; i++) {
@@ -84,7 +88,7 @@ public:
     Matrix result(rowCount, other.colCount);
     for (int i = 0; i < rowCount; i++) {
       for (int j = 0; j < other.colCount; j++) {
-        float sum = 0;
+        T sum = 0;
         for (int k = 0; k < colCount; k++) {
           sum += get(i, k) * other.get(k, j);
         }
@@ -93,7 +97,7 @@ public:
     }
     return result;
   }
-  void operator*=(int value) {
+  void operator*=(T value) {
     for (int i = 0; i < rowCount; i++) {
       for (int j = 0; j < colCount; j++) {
         this->set(i, j, get(i, j) * value);
