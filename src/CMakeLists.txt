@@ -8,7 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # enables creating compile_commands.json f
 add_library(MathLib INTERFACE) 
 
 add_executable(ManualTest EXCLUDE_FROM_ALL 
-    ${CMAKE_CURRENT_SOURCE_DIR}/manualtest.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/tests/manualtest.cpp)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
